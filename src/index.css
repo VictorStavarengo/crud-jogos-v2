@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 243 244 246; /* canvas — fundo da página */
+    --surface: 255 255 255; /* cards, formulário */
+    --surface-2: 249 250 251; /* inputs */
+    --border: 229 231 235;
+    --text: 17 24 39;
+    --text-muted: 107 114 128;
+    --radius: 10px;
+    --focus: 17 17 17; /* contorno de foco preto */
+
+    /* Destaque: preto no tema claro (e branco no escuro) */
+    --accent: 17 17 17; /* fundo de botão / chip ativo */
+    --accent-ink: 255 255 255; /* texto sobre o destaque */
+    --accent-text: 17 17 17; /* links e bordas de destaque */
+
+    /* Cores de texto/ícone para status, com contraste legível sobre branco */
+    --success: 21 128 61; /* green-700 */
+    --warning: 217 119 6; /* amber-600 — estrelas e números de destaque */
+    --danger: 220 38 38; /* red-600 — erros */
+
+    --glow: 0 0 0; /* brilho suave no topo da página */
+    --glow-opacity: 0.05;
+  }
+
+  html.dark {
+    /* Camadas: página < cards < campos. Dá profundidade sem perder o visual escuro. */
+    --bg: 10 10 10; /* #0a0a0a */
+    --surface: 17 17 17; /* #111111 — cards e formulários */
+    --surface-2: 23 23 23; /* #171717 — campos de texto */
+    --border: 41 41 41; /* #292929 */
+    --text: 255 255 255;
+    --text-muted: 163 163 163; /* neutral-400 */
+    --radius: 0px;
+    --focus: 163 163 163; /* cinza: foco discreto, sem o branco forte */
+
+    --accent: 255 255 255;
+    --accent-ink: 0 0 0;
+    --accent-text: 255 255 255;
+    --success: 74 222 128; /* green-400 */
+    --warning: 255 176 32; /* dourado vivo */
+    --danger: 255 99 99; /* vermelho vivo */
+
+    --glow: 255 255 255;
+    --glow-opacity: 0.07;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-body antialiased transition-colors duration-200;
+    background-image: radial-gradient(
+      60rem 28rem at 50% -8rem,
+      rgb(var(--glow) / var(--glow-opacity)),
+      transparent 70%
+    );
+    background-repeat: no-repeat;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  /* foco visível para acessibilidade de teclado (botões, links, cards...) */
+  :focus-visible {
+    outline: 2px solid rgb(var(--focus));
+    outline-offset: 2px;
+  }
+
+  /*
+   * Campos de texto já têm destaque próprio (borda + brilho suave, ver inputClass).
+   * Sem isto apareciam duas linhas brancas: a borda e o contorno do foco.
+   */
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+  }
+
+  /* O botão de limpar da busca é nosso; esconde o "x" nativo do Chrome/Safari */
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+}
