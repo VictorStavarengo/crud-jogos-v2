@@ -2,19 +2,15 @@
 
 Reconstrução do meu primeiro projeto de catálogo de jogos, agora com TypeScript, testes automatizados e uma arquitetura mais organizada.
 
-**[Ver demo ao vivo →](#)** _(atualize depois do deploy)_
+**[Ver demo ao vivo →](https://crud-jogos-v2.vercel.app)**
 
-<!-- Salve um print ou GIF em docs/screenshot.png e descomente a linha abaixo:
-![Catálogo de Jogos](docs/screenshot.png)
--->
+![Demonstração do Catálogo de Jogos: editar, arrastar, filtrar e ordenar](docs/demo.gif)
 
 ---
 
 ## 📖 Sobre o projeto
 
 Aplicativo CRUD para organizar os jogos que você quer jogar, está jogando, já zerou ou abandonou. Busca dados de jogos em tempo real na [RAWG.io](https://rawg.io/apidocs) para autocompletar o cadastro (ou permite cadastrar manualmente, sem a API), com persistência local via `localStorage`.
-
-Este projeto é a segunda versão de um catálogo de jogos que eu já tinha feito em JavaScript puro (veja o [projeto original](https://github.com/VictorStavarengo/crud-jogos)). Refiz do zero para:
 
 - migrar para **TypeScript**, com tipagem no domínio (`Game`), nos serviços e nos componentes;
 - separar responsabilidades em `hooks`, `services`, `types`, `utils` e `components`, em vez de um único arquivo grande;
@@ -35,6 +31,18 @@ Este projeto é a segunda versão de um catálogo de jogos que eu já tinha feit
 - Backup: exporte a biblioteca para um arquivo `.json` e importe depois (os jogos novos são somados, nada é apagado e duplicados são ignorados).
 - Tema claro/escuro, com avisos quando o armazenamento do navegador não está disponível e quando a busca da RAWG está limitada.
 - Acessibilidade: navegação por teclado, foco visível, janela de detalhes com foco preso, anúncios em português para leitor de tela ao arrastar.
+
+---
+
+## 📸 Telas
+
+| Tema escuro | Tema claro |
+| --- | --- |
+| ![Tema escuro](docs/screenshot.png) | ![Tema claro](docs/screenshot-claro.png) |
+
+<p align="center">
+  <img src="docs/detalhes.png" width="520" alt="Janela de detalhes de um jogo" />
+</p>
 
 ---
 
