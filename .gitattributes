@@ -1,0 +1,5 @@
+# Mantém as quebras de linha iguais (LF) em qualquer sistema, sem o aviso "LF will be replaced by CRLF"
+* text=auto eol=lf
+*.png binary
+*.gif binary
+*.svg text
