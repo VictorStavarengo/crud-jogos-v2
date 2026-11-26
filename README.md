@@ -27,7 +27,7 @@
 
 Aplicativo CRUD para montar uma biblioteca pessoal de jogos. Busca dados em tempo real na [RAWG.io](https://rawg.io/apidocs) para autocompletar o cadastro (ou permite cadastrar manualmente, sem a API) e guarda tudo no navegador, com backup em arquivo.
 
-É a segunda versão de um catálogo que eu já tinha feito em JavaScript puro (veja o [projeto original](https://github.com/VictorStavarengo/crud-jogos)). Refiz do zero para:
+É a segunda versão de um catálogo que eu já tinha feito em JavaScript puro. Refiz do zero para:
 
 - migrar para **TypeScript**, com tipagem no domínio (`Game`), nos serviços e nos componentes;
 - separar responsabilidades em `hooks`, `services`, `types`, `utils` e `components`, em vez de um único arquivo grande;
