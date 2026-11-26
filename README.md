@@ -114,7 +114,7 @@ npm install
 npm run dev
 ```
 
-O app abre em `http://localhost:5173`. Requer Node 20 ou mais novo (o repositório usa o 22, veja `.nvmrc`).
+O app abre em `http://localhost:5173`. Requer Node 20.19+ ou 22.12+ (o repositório usa o 22, veja `.nvmrc`).
 
 ### Chave da RAWG (para o autocomplete)
 
